@@ -1,8 +1,7 @@
 # Proyecto Urban Routes
 
-Este proyecto corresponde al Sprint 9: "Automatización de pruebas de la aplicación web".
-
-El objetivo del proyecto es automatizar pruebas para la aplicación Urban Routes, comprobando el flujo completo para pedir un taxi. Las pruebas validan acciones como configurar una ruta, seleccionar la tarifa Comfort, agregar un número de teléfono, agregar una tarjeta de crédito, escribir un mensaje para el conductor, pedir manta y pañuelos, pedir helados y confirmar que aparece el modal de búsqueda de taxi.
+Este proyecto contiene pruebas automatizadas para la aplicación web Urban Routes.  
+El objetivo es validar diferentes funcionalidades del flujo para pedir un taxi, utilizando Selenium WebDriver y pytest.
 
 ## Tecnologías utilizadas
 
@@ -10,32 +9,56 @@ El objetivo del proyecto es automatizar pruebas para la aplicación Urban Routes
 - Selenium WebDriver
 - Pytest
 - Google Chrome
-- ChromeDriver
-- Page Object Model, también conocido como POM
 
-## Archivos principales del proyecto
+## Estructura del proyecto
 
-- `data.py`: contiene los datos usados en las pruebas, como URL, direcciones, teléfono, tarjeta y mensaje para el conductor.
-- `main.py`: contiene los localizadores, métodos de la página y las pruebas automatizadas.
-- `.gitignore`: evita subir archivos innecesarios como el entorno virtual, caché de Python y archivos de PyCharm.
+- `data.py`: contiene los datos de prueba utilizados en las pruebas.
+- `helpers.py`: contiene la función para obtener el código de confirmación del teléfono.
+- `pages.py`: contiene la clase `UrbanRoutesPage`, donde se encuentran los localizadores y métodos de interacción con la página.
+- `main.py`: contiene la clase `TestUrbanRoutes` con los casos de prueba.
+- `.gitignore`: evita subir archivos innecesarios al repositorio.
 
-## Pruebas automatizadas
+## Funcionalidades probadas
 
-Las pruebas cubren el siguiente flujo:
+Las pruebas automatizadas validan los siguientes escenarios:
 
-1. Configurar la dirección de origen y destino.
-2. Seleccionar la tarifa Comfort.
-3. Rellenar el número de teléfono.
-4. Agregar una tarjeta de crédito.
-5. Escribir un mensaje para el conductor.
-6. Pedir manta y pañuelos.
-7. Pedir dos helados.
-8. Confirmar que aparece el modal para buscar un taxi.
-9. Esperar a que aparezca la información del conductor.
+- Configurar la ruta de origen y destino.
+- Seleccionar la tarifa Comfort.
+- Rellenar el número de teléfono.
+- Agregar una tarjeta de crédito.
+- Ingresar el código de confirmación de la tarjeta.
+- Escribir un mensaje para el conductor.
+- Pedir una manta y pañuelos.
+- Pedir dos helados.
+- Confirmar que aparece el modal para buscar un taxi.
+- Validar que aparece la información del conductor.
 
-## Cómo ejecutar las pruebas
 
-Primero, asegúrate de estar en la carpeta del proyecto:
 
-```bash
-cd qa-project-Urban-Routes-es
+## Cómo ejecutar el proyecto
+
+1. Clonar el repositorio:
+`git clone URL_DEL_REPOSITORIO`
+2. Entrar a la carpeta del proyecto:
+`cd qa-project-Urban-Routes-es`
+3. Instalar las dependencias necesarias:
+`pip install selenium pytest`
+4. Ejecutar las pruebas:
+`pytest main.py`
+
+### Resultado esperado
+
+Al ejecutar las pruebas, todas deben pasar correctamente.
+
+Ejemplo: `9 passed`
+
+
+.
+#### Notas:
+
+Antes de ejecutar las pruebas, es importante verificar que la URL de Urban Routes en el archivo data.py esté actualizada y funcionando correctamente.
+
+Solo cambia esta parte, por el link real de tu repositorio de GitHub cuando ya lo tengas:
+
+```markdown
+git clone URL_DEL_REPOSITORIO
